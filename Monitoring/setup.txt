@@ -1,0 +1,13 @@
+cd C:\development\workspaces\vs2010\Monitoring\NTServicesHosting\bin\Debug
+
+#install service
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\InstallUtil.exe NTServicesHosting.exe
+
+#uninstall service
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\InstallUtil.exe /u NTServicesHosting.exe
+
+
+netsh http add urlacl url=http://+:9400/ user="NT AUTHORITY\NETWORKSERVICE"
+
+#netsh http add urlacl url=http://+:9400/Service user=newton\tom
+#netsh tcp add urlacl url=net.tcp://+:9500/Service user=newton\tom
